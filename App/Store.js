@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import isMobileReducer from '../features/isMobile/isMobileSlice'
+import tabReducer from '../features/tabSlice/tabSlice'
 
 export const store = configureStore({
   reducer: {
     isMobile: isMobileReducer,
+    tabSlice: tabReducer,
   },
 })

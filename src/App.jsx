@@ -26,7 +26,7 @@ function App() {
         <Outlet />
       </div>
       {isMobile && (
-        <div className="fixed bottom-5 left-0 w-full bg-white shadow-md z-50">
+        <div className="fixed bottom-5 left-0 w-full bg-transparent shadow-md z-50">
           <MobileNavbar />
         </div>
       )}
