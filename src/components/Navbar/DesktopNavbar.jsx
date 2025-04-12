@@ -2,7 +2,7 @@ import React from 'react'
 
 function DesktopNavbar() {
   return (
-    <div>DesktopNavbar</div>
+    <div className=''>DesktopNavbar</div>
   )
 }
 
