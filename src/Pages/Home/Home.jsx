@@ -1,37 +1,33 @@
 import React from "react";
-import Squares from "../../../Bits/Squares";
 import { motion } from "motion/react";
 
 function Home() {
   return (
-    <div className="h-screen">
-      {/* <Squares
-        speed={0.5}
-        squareSize={40}
-        direction="diagonal" // up, down, left, right, diagonal
-        borderColor="#fff"
-        hoverFillColor="#222"
-      /> */}
+    <div className="">
+      <div className="flex flex-col justify-center items-center space-y-4 h-screen">
+        <motion.div
+          className=""
+          initial={{ y: "10vh", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 120 }}
+        >
+          <span className="text-3xl md:text-4xl text-center">Hello,</span> {""}
+          <br className="md:hidden"/>
+          <span className="text-xl md:text-2xl text-center">I am </span>
+          <span className="text-4xl md:text-5xl font-bold text-purple-700 text-center">
+            Zaid Hassan
+          </span>
+        </motion.div>
 
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onHoverStart={() => console.log("hover started!")}
-      >
-        <button className="bg-red-700 h-11 w-11">h</button>
-      </motion.button>
-
-      <motion.div
-        className="bg-blue-700 h-11 w-11"
-        animate={{
-          scale: 2,
-          transition: { duration: 2 },
-        }}
-      />
-      <motion.div
-        initial={{ backgroundColor: "rgb(0, 255, 0)", opacity: 0 }}
-        whileInView={{ backgroundColor: "rgb(255, 0, 0)", opacity: 1 }}
-      />
+        <motion.h1
+          className="text-lg w-[80%] md:w-full md:text-xl text-center"
+          initial={{ y: "10vh", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 120, delay: 0.4 }}
+        >
+          I'm Front-End Developer and a Game Developer
+        </motion.h1>
+      </div>
     </div>
   );
 }

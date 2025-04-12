@@ -20,6 +20,7 @@ export default function DesktopNavbar() {
   }, [selectedTab]);
 
   return (
+<<<<<<< HEAD
     <nav className="relative flex h-14 rounded-lg justify-center gap-8 mx-auto backdrop-blur-lg p-2 shadow-lg">
       <div className="relative flex gap-8">
         {tabs.map((tab) => (
@@ -30,6 +31,11 @@ export default function DesktopNavbar() {
             className="relative px-5 py-2 text-black text-lg font-medium transition-all duration-300"
           >
             {tab.label}
+=======
+    <div className=''>DesktopNavbar</div>
+  )
+}
+>>>>>>> three
 
             {selectedTab === tab.label.toLowerCase() && (
               <motion.div

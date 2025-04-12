@@ -30,7 +30,7 @@ function App() {
           <MobileNavbar />
         </div>
       )}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
