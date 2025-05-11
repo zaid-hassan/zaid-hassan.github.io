@@ -1,1 +1,65 @@
 @import "tailwindcss";
+@theme {
+  /* === Gruv Light === */
+  --color-gruv-light-background: #fbf1c7;
+  --color-gruv-light-surface: #fdf4c1;
+  --color-gruv-light-surface-alt: #f2e5bc;
+  --color-gruv-light-border: #d5c4a1;
+  --color-gruv-light-muted: #bdae93;
+  --color-gruv-light-text: #3c3836;
+  --color-gruv-light-text-muted: #665c54;
+  --color-gruv-light-subtext: #504945;
+  --color-gruv-light-heading: #98971a;
+  --color-gruv-light-accent: #cc241d;
+  --color-gruv-light-accent-hover: #9d0006;
+  --color-gruv-light-accent-alt: #458588;
+  --color-gruv-light-success: #689d6a;
+  --color-gruv-light-warning: #d79921;
+  --color-gruv-light-error: #cc241d;
+  --color-gruv-light-info: #83a598;
+
+  /* === Gruv Dark === */
+  --color-gruv-dark-background: #1d2021;
+  --color-gruv-dark-surface: #282828;
+  --color-gruv-dark-surface-alt: #32302f;
+  --color-gruv-dark-border: #3c3836;
+  --color-gruv-dark-muted: #504945;
+  --color-gruv-dark-text: #ebdbb2;
+  --color-gruv-dark-text-muted: #d5c4a1;
+  --color-gruv-dark-subtext: #bdae93;
+  --color-gruv-dark-heading: #fabd2f;
+  --color-gruv-dark-accent: #fe8019;
+  --color-gruv-dark-accent-hover: #d65d0e;
+  --color-gruv-dark-accent-alt: #83a598;
+  --color-gruv-dark-success: #b8bb26;
+  --color-gruv-dark-warning: #fabd2f;
+  --color-gruv-dark-error: #fb4934;
+  --color-gruv-dark-info: #83a598;
+
+  /* === Gruv Soft === */
+  --color-gruv-soft-background: #282828;
+  --color-gruv-soft-surface: #32302f;
+  --color-gruv-soft-surface-alt: #3c3836;
+  --color-gruv-soft-border: #504945;
+  --color-gruv-soft-muted: #7c6f64;
+  --color-gruv-soft-text: #ebdbb2;
+  --color-gruv-soft-text-muted: #d5c4a1;
+  --color-gruv-soft-subtext: #bdae93;
+  --color-gruv-soft-heading: #d79921;
+  --color-gruv-soft-accent: #d65d0e;
+  --color-gruv-soft-accent-hover: #af3a03;
+  --color-gruv-soft-accent-alt: #689d6a;
+  --color-gruv-soft-success: #b8bb26;
+  --color-gruv-soft-warning: #fabd2f;
+  --color-gruv-soft-error: #fb4934;
+  --color-gruv-soft-info: #83a598;
+
+  /* .jetbrains-mono-thin {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  } */
+
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
+}

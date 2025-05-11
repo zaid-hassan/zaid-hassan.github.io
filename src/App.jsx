@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
-import { Outlet } from "react-router";
 import Footer from "./components/Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsMobile } from "../features/isMobile/isMobileSlice";
-import DesktopNavbar from "./components/Navbar/DesktopNavbar";
-import MobileNavbar from "./components/Navbar/MobileNavbar";
+import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const dispatch = useDispatch();
   const isMobile = useSelector((state) => state.isMobile.isMobile);
-
   useEffect(() => {
     function handleResize() {
       dispatch(setIsMobile(window.innerWidth <= 768));
@@ -21,15 +19,10 @@ function App() {
 
   return (
     <>
-      {!isMobile && <DesktopNavbar />}
-      <div className="h-screen">
-        <Outlet />
-      </div>
-      {isMobile && (
-        <div className="fixed bottom-5 left-0 w-full bg-transparent shadow-md z-50">
-          <MobileNavbar />
+      <AnimatedRoutes />
+        <div className="fixed bottom-5 left-0 w-full bg-transparent z-50">
+          <Navbar />
         </div>
-      )}
       {/* <Footer /> */}
     </>
   );

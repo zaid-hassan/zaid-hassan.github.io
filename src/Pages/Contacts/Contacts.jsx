@@ -1,8 +1,12 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import TransitionDiv from '../../components/TransitionDiv/TransitionDiv'
 
 function Contacts() {
   return (
-    <div>Contacts</div>
+    <motion.div>Contacts
+      <TransitionDiv />
+    </motion.div>
   )
 }
 
