@@ -35,7 +35,7 @@ function Navbar() {
             isActive
               ? "text-gruv-dark-accent scale-110"
               : "text-gruv-dark-accent-alt"
-          }`
+          } hover:text-gruv-dark-accent-hover `
         }
         onClick={() => {
           dispatch(setSelectedTab("home"));
@@ -51,7 +51,7 @@ function Navbar() {
             isActive
               ? "text-gruv-dark-accent scale-110"
               : "text-gruv-dark-accent-alt"
-          }`
+          } hover:text-gruv-dark-accent-hover`
         }
         onClick={() => {
           dispatch(setSelectedTab("about"));
@@ -67,7 +67,7 @@ function Navbar() {
             isActive
               ? "text-gruv-dark-accent scale-110"
               : "text-gruv-dark-accent-alt"
-          }`
+          } hover:text-gruv-dark-accent-hover`
         }
         onClick={() => {
           dispatch(setSelectedTab("contact"));
@@ -83,7 +83,7 @@ function Navbar() {
             isActive
               ? "text-gruv-dark-accent scale-110"
               : "text-gruv-dark-accent-alt"
-          }`
+          } hover:text-gruv-dark-accent-hover`
         }
         onClick={() => {
           dispatch(setSelectedTab("projects"));
