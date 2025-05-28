@@ -7,7 +7,7 @@ function Contacts() {
   const links = [
     {
       name: "LinkedIn",
-      link: "https://linkedin.com",
+      link: "https://linkedin.com/in/zaidhassan4",
     },
     {
       name: "Twitter",
@@ -19,11 +19,11 @@ function Contacts() {
     },
     {
       name: "Discord",
-      link: "https://linkedin.com",
+      link: "https://discord.com/users/1246327094204436491",
     },
     {
       name: "Reddit",
-      link: "https://linkedin.com",
+      link: "https://www.reddit.com/user/Top-Skirt4424",
     },
   ];
   return (
