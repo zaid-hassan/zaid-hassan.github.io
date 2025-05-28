@@ -24,9 +24,7 @@ function Navbar() {
   const dispatch = useDispatch();
   return (
     <nav
-      className={`flex h-11 w-[90%] md:w-[40%] rounded-xl justify-evenly items-center gap-x-4 mx-auto bg-white/10 backdrop-blur-md transition-all duration-700 ease-in-out ${
-        scrollDirection === "down" ? "translate-y-14" : "translate-y-0"
-      }`}
+      className={`flex h-11 w-[90%] md:w-[40%] rounded-xl justify-evenly items-center gap-x-4 mx-auto bg-white/10 backdrop-blur-md transition-all duration-700 ease-in-out `}
     >
       <NavLink
         to="/"
