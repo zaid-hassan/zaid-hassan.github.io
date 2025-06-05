@@ -51,7 +51,7 @@ function About() {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: "-10vh", opacity: 0 }}
         transition={{ delay: 0.6, ease: "easeInOut" }}
-        href="https://drive.google.com/file/d/1BdNynaR9EQfGrTK-L3nrfZW_vU8uMub9/view?usp=drive_link"
+        href="https://drive.google.com/file/d/1HniU9gmRwXwEMmaWJAGQkV_iuPSIYPO3/view?usp=sharing"
         target="_blank"
         className="font-jetbrains-mono font-thin text-gruv-soft-text text-md md:text-lg bg-gruv-soft-surface w-fit hover:bg-gruv-soft-accent-hover transition-all duration-300 ease-in-out px-4 py-2 rounded-lg cursor-pointer"
       >
