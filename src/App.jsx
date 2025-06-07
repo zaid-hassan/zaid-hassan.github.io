@@ -10,12 +10,16 @@ function App() {
   const dispatch = useDispatch();
   const isMobile = useSelector((state) => state.isMobile.isMobile);
   useEffect(() => {
-    function handleResize() {
-      dispatch(setIsMobile(window.innerWidth <= 768));
-    }
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const handleMediaChange = (e) => {
+      dispatch(setIsMobile(e.matches));
+    };
+
+    handleMediaChange(mediaQuery);
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
   }, []);
 
   return (

@@ -9,6 +9,7 @@ import { setCursorType } from "../../../features/cursorType/cursorType";
 
 function About() {
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
+  const isMobile = useSelector((state) => state.isMobile.isMobile);
   const dispatch = useDispatch();
   const icons = [
     "html5",
@@ -25,7 +26,7 @@ function About() {
       key="about"
       className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-gruv-soft-background"
     >
-      <CustomCursor type={selectedCursor} />
+      {!isMobile && <CustomCursor type={selectedCursor} />}{" "}
       <motion.h1
         className="text-5xl md:text-7xl font-extrabold mb-2 text-gruv-soft-heading font-jetbrains-mono"
         initial={{ y: "10vh", opacity: 0 }}
@@ -51,7 +52,6 @@ function About() {
         where I get to mix logic with creativity and just have fun experimenting
         with ideas.
       </motion.p>
-
       <motion.a
         initial={{ y: "10vh", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -69,7 +69,6 @@ function About() {
           Resume <ArrowDownToLine />
         </p>
       </motion.a>
-
       {/* <motion.div
         initial={{ y: "10vh", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

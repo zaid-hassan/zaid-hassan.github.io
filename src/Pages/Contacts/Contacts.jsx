@@ -8,6 +8,8 @@ import { setCursorType } from "../../../features/cursorType/cursorType";
 
 function Contacts() {
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
+  const isMobile = useSelector((state) => state.isMobile.isMobile);
+
   const dispatch = useDispatch();
   const links = [
     {
@@ -36,7 +38,7 @@ function Contacts() {
       key="about"
       className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-gruv-soft-background"
     >
-      <CustomCursor type={selectedCursor} />
+      {!isMobile && <CustomCursor type={selectedCursor} />}{" "}
       <motion.h1
         className="text-5xl md:text-7xl font-extrabold mb-2 text-gruv-soft-heading font-jetbrains-mono"
         initial={{ y: "10vh", opacity: 0 }}
@@ -69,15 +71,15 @@ function Contacts() {
         </motion.h3>
         {links.map((link, index) => (
           <motion.div
-          key={link.name}
-          whileHover="hover"
-          initial="rest"
-          animate="rest"
-          className="w-fit cursor-pointer group h-7"
+            key={link.name}
+            whileHover="hover"
+            initial="rest"
+            animate="rest"
+            className="w-fit cursor-pointer group h-7"
           >
             <motion.a
-            onMouseEnter={() => dispatch(setCursorType("link"))}
-            onMouseLeave={() => dispatch(setCursorType("default"))}
+              onMouseEnter={() => dispatch(setCursorType("link"))}
+              onMouseLeave={() => dispatch(setCursorType("default"))}
               initial={{ y: "10vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "-10vh", opacity: 0 }}

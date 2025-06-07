@@ -6,13 +6,14 @@ import CustomCursor from "../../components/CustomCursor/CustomCursor";
 
 function Projects() {
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
+  const isMobile = useSelector((state) => state.isMobile.isMobile);
   const dispatch = useDispatch();
   return (
     <motion.div
       key="project"
       className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-gruv-soft-background"
     >
-      <CustomCursor type={selectedCursor}/>
+      {!isMobile && <CustomCursor type={selectedCursor} />}{" "}
       <motion.h1
         className="text-5xl md:text-7xl font-extrabold mb-6 text-gruv-soft-heading font-jetbrains-mono"
         initial={{ y: "10vh", opacity: 0, scale: 0.8 }}
@@ -22,9 +23,7 @@ function Projects() {
       >
         Projects
       </motion.h1>
-      <motion.main className="h-screen w-full flex flex-col justify-center items-center ">
-
-      </motion.main>
+      <motion.main className="h-screen w-full flex flex-col justify-center items-center "></motion.main>
       <TransitionDiv />
     </motion.div>
   );

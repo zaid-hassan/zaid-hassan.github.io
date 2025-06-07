@@ -6,10 +6,12 @@ import { Link } from "react-router";
 import CustomCursor from "../../components/CustomCursor/CustomCursor";
 import { useDispatch, useSelector } from "react-redux";
 import { setCursorType } from "../../../features/cursorType/cursorType";
+import { setSelectedTab } from "../../../features/tabSlice/tabSlice";
 
 function Home() {
   const containerRef = useRef(null);
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
+  const isMobile = useSelector((state) => state.isMobile.isMobile);
   const dispatch = useDispatch();
 
   return (
@@ -19,8 +21,8 @@ function Home() {
       className="flex flex-col bg-gruv-soft-background justify-center items-center space-y-4 h-screen cursor-none" // Hide native cursor
       key="home"
     >
-      <CustomCursor type={selectedCursor} />
-      <Crosshair containerRef={containerRef} color="#ffffff" />
+      {!isMobile && <CustomCursor type={selectedCursor} />}
+      {!isMobile && <Crosshair containerRef={containerRef} color="#ffffff" />}
 
       <motion.div
         initial={{ y: "10vh", opacity: 0, scale: 0.8 }}
@@ -48,7 +50,7 @@ function Home() {
         transition={{ ease: "easeInOut", delay: 0.4 }}
       >
         I'm{" "}
-        <Link to="/about">
+        <Link to="/about" onClick={() => dispatch(setSelectedTab('about'))}>
           <span
             onMouseEnter={() => dispatch(setCursorType("arrow"))}
             onMouseLeave={() => dispatch(setCursorType("default"))}
@@ -58,6 +60,7 @@ function Home() {
           </span>
         </Link>{" "}
         and a{" "}
+        <Link to="/about" onClick={() => dispatch(setSelectedTab('about'))}>
         <span
           onMouseEnter={() => dispatch(setCursorType("arrow"))}
           onMouseLeave={() => dispatch(setCursorType("default"))}
@@ -65,6 +68,7 @@ function Home() {
         >
           Game Developer
         </span>
+          </Link>
       </motion.h1>
 
       <TransitionDiv />
