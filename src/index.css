@@ -63,3 +63,10 @@
 
   --font-jetbrains-mono: "JetBrains Mono", monospace;
 }
+
+.custom-cursor-default {
+  cursor: url("./assets/circle.svg") 30 30, auto;
+}
+.custom-cursor-arrow {
+  cursor: url("./assets/circlearrow.svg") 50 50, auto;
+}

@@ -2,8 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import TransitionDiv from "../../components/TransitionDiv/TransitionDiv";
 import Border from "../../components/Border/Border";
+import { useDispatch, useSelector } from "react-redux";
+import CustomCursor from "../../components/CustomCursor/CustomCursor";
+import { setCursorType } from "../../../features/cursorType/cursorType";
 
 function Contacts() {
+  const selectedCursor = useSelector((state) => state.cursorType.currentType);
+  const dispatch = useDispatch();
   const links = [
     {
       name: "LinkedIn",
@@ -31,6 +36,7 @@ function Contacts() {
       key="about"
       className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-gruv-soft-background"
     >
+      <CustomCursor type={selectedCursor} />
       <motion.h1
         className="text-5xl md:text-7xl font-extrabold mb-2 text-gruv-soft-heading font-jetbrains-mono"
         initial={{ y: "10vh", opacity: 0 }}
@@ -63,17 +69,19 @@ function Contacts() {
         </motion.h3>
         {links.map((link, index) => (
           <motion.div
-            key={link.name}
-            whileHover="hover"
-            initial="rest"
-            animate="rest"
-            className="w-fit cursor-pointer group h-7"
+          key={link.name}
+          whileHover="hover"
+          initial="rest"
+          animate="rest"
+          className="w-fit cursor-pointer group h-7"
           >
             <motion.a
+            onMouseEnter={() => dispatch(setCursorType("link"))}
+            onMouseLeave={() => dispatch(setCursorType("default"))}
               initial={{ y: "10vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "-10vh", opacity: 0 }}
-              transition={{ ease: "easeInOut", delay: index * .1 + 1 }} 
+              transition={{ ease: "easeInOut", delay: index * 0.1 + 1 }}
               href={link.link}
               target="_blank"
               rel="noopener noreferrer"

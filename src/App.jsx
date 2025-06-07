@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsMobile } from "../features/isMobile/isMobileSlice";
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 import Navbar from "./components/Navbar/Navbar";
-import Noise from "./components/Noise/Noise";
+import Noise from "./components/Bits/Noise/Noise";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="cursor-none">
       <div
         style={{
           width: "100svw",
@@ -42,7 +42,7 @@ function App() {
         <Navbar />
       </div>
       {/* <Footer /> */}
-    </>
+    </div>
   );
 }
 

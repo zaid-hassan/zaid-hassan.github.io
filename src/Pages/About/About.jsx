@@ -3,8 +3,13 @@ import TransitionDiv from "../../components/TransitionDiv/TransitionDiv";
 import StackIcon from "tech-stack-icons";
 import { ArrowDownToLine } from "lucide-react";
 import Border from "../../components/Border/Border";
+import CustomCursor from "../../components/CustomCursor/CustomCursor";
+import { useDispatch, useSelector } from "react-redux";
+import { setCursorType } from "../../../features/cursorType/cursorType";
 
 function About() {
+  const selectedCursor = useSelector((state) => state.cursorType.currentType);
+  const dispatch = useDispatch();
   const icons = [
     "html5",
     "css3",
@@ -20,6 +25,7 @@ function About() {
       key="about"
       className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-gruv-soft-background"
     >
+      <CustomCursor type={selectedCursor} />
       <motion.h1
         className="text-5xl md:text-7xl font-extrabold mb-2 text-gruv-soft-heading font-jetbrains-mono"
         initial={{ y: "10vh", opacity: 0 }}
@@ -55,7 +61,11 @@ function About() {
         target="_blank"
         className="font-jetbrains-mono font-thin text-gruv-soft-text text-md md:text-lg bg-gruv-soft-surface w-fit hover:bg-gruv-soft-accent-hover transition-all duration-300 ease-in-out px-4 py-2 rounded-lg cursor-pointer"
       >
-        <p className="flex items-center gap-2">
+        <p
+          onMouseEnter={() => dispatch(setCursorType("arrowDown"))}
+          onMouseLeave={() => dispatch(setCursorType("default"))}
+          className="flex items-center gap-2 cursor-none"
+        >
           Resume <ArrowDownToLine />
         </p>
       </motion.a>

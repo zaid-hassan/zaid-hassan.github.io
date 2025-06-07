@@ -1,24 +1,36 @@
-import React from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import TransitionDiv from "../../components/TransitionDiv/TransitionDiv";
+import Crosshair from "../../components/Bits/CrossHair/CrossHair";
+import { Link } from "react-router";
+import CustomCursor from "../../components/CustomCursor/CustomCursor";
+import { useDispatch, useSelector } from "react-redux";
+import { setCursorType } from "../../../features/cursorType/cursorType";
 
 function Home() {
+  const containerRef = useRef(null);
+  const selectedCursor = useSelector((state) => state.cursorType.currentType);
+  const dispatch = useDispatch();
+
   return (
     <motion.div
-      className="flex flex-col bg-gruv-soft-background justify-center items-center space-y-4 h-screen"
+      ref={containerRef}
+      onMouseEnter={() => dispatch(setCursorType("default"))}
+      className="flex flex-col bg-gruv-soft-background justify-center items-center space-y-4 h-screen cursor-none" // Hide native cursor
       key="home"
     >
+      <CustomCursor type={selectedCursor} />
+      <Crosshair containerRef={containerRef} color="#ffffff" />
+
       <motion.div
-        className=""
         initial={{ y: "10vh", opacity: 0, scale: 0.8 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: "-10vh", opacity: 0, scale: 0.8 }}
-        transition={{ ease: 'easeInOut' }}
+        transition={{ ease: "easeInOut" }}
       >
         <span className="text-3xl md:text-4xl text-gruv-soft-text-muted font-jetbrains-mono font-thin text-center">
           Hello,
-        </span>{" "}
-        {""}
+        </span>
         <br className="md:hidden" />
         <span className="text-xl md:text-2xl text-gruv-soft-text-muted font-jetbrains-mono font-thin text-center">
           I am{" "}
@@ -33,11 +45,28 @@ function Home() {
         initial={{ y: "10vh", opacity: 0, scale: 0.8 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: "-10vh", opacity: 0, scale: 0.8 }}
-        transition={{ ease: 'easeInOut', delay: 0.4 }}
+        transition={{ ease: "easeInOut", delay: 0.4 }}
       >
-        I'm <span className="font-bold">Front-End Developer</span> and a{" "}
-        <span className="font-bold">Game Developer</span>
+        I'm{" "}
+        <Link to="/about">
+          <span
+            onMouseEnter={() => dispatch(setCursorType("arrow"))}
+            onMouseLeave={() => dispatch(setCursorType("default"))}
+            className="font-bold glitch-target hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l hover:from-gruv-light-success to-gruv-light-accent-alt transition duration-200 ease-in-out"
+          >
+            Front-End Developer
+          </span>
+        </Link>{" "}
+        and a{" "}
+        <span
+          onMouseEnter={() => dispatch(setCursorType("arrow"))}
+          onMouseLeave={() => dispatch(setCursorType("default"))}
+          className="font-bold glitch-target hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l hover:from-gruv-light-success to-gruv-light-accent-alt transition duration-200 ease-in-out"
+        >
+          Game Developer
+        </span>
       </motion.h1>
+
       <TransitionDiv />
     </motion.div>
   );
