@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import TransitionDiv from "../../components/TransitionDiv/TransitionDiv";
-import Crosshair from "../../components/Bits/CrossHair/CrossHair";
+// import Crosshair from "../../components/Bits/CrossHair/CrossHair";
 import { Link } from "react-router";
 import CustomCursor from "../../components/CustomCursor/CustomCursor";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,7 +22,7 @@ function Home() {
       key="home"
     >
       {!isMobile && <CustomCursor type={selectedCursor} />}
-      {!isMobile && <Crosshair containerRef={containerRef} color="#ffffff" />}
+      {/* {!isMobile && <Crosshair containerRef={containerRef} color="#ffffff" />} */}
 
       <motion.div
         initial={{ y: "10vh", opacity: 0, scale: 0.8 }}

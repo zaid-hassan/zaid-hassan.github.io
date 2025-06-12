@@ -1,8 +1,46 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import TransitionDiv from "../../components/TransitionDiv/TransitionDiv";
 import { useDispatch, useSelector } from "react-redux";
 import CustomCursor from "../../components/CustomCursor/CustomCursor";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import TiltedCard from "../../components/Bits/TiltedCard/TiltedCard";
+import { ExternalLink, Link, Link2 } from "lucide-react";
+import { li } from "motion/react-client";
+
+const projects = [
+  {
+    imgSrc: "./src/assets/project/adhicrat.png",
+    altText: "Adhicrat AI",
+    captionText: "Adhicrat AI",
+    name: "Adhicrat AI",
+    githubLink: "https://github.com/zaid-hassan/adhicrat_ai",
+    liveLink: "https://adhicrat-ai.vercel.app",
+  },
+  {
+    imgSrc: "./src/assets/project/easyrent.png",
+    altText: "Easy Rent Punta Cana",
+    captionText: "Easy Rent Punta Cana",
+    name: "Easy Rent",
+    githubLink: "https://github.com/zaid-hassan/bautistarents",
+    liveLink: "https://easyrentpuntacana.com/",
+  },
+  {
+    imgSrc: "./src/assets/project/portfolio.png",
+    altText: "Zaid Hassan Portfolio",
+    captionText: "Zaid Hassan Portfolio",
+    name: "Zaid Portfolio",
+    githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
+    liveLink: "https://zaidhassan.vercel.app",
+  },
+  {
+    imgSrc: "./src/assets/project/spacegunner.png",
+    altText: "Space Gunner",
+    captionText: "Space Gunner",
+    name: "Space Gunner",
+    githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
+    liveLink: "https://space-gunner.netlify.app/",
+  },
+];
 
 function Projects() {
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
@@ -23,7 +61,46 @@ function Projects() {
       >
         Projects
       </motion.h1>
-      <motion.main className="h-screen w-full flex flex-col justify-center items-center "></motion.main>
+      <motion.main className="min-h-screen w-full flex flex-wrap gap-11 justify-center items-center py-11">
+        {projects.map((project, index) => (
+          <motion.div initial={{opacity: 0, y: 50}} animate={{opacity:1, y: 0}} key={index} transition={{ ease: "easeInOut", delay: index * 0.4, duration: .5 }} className="">
+            <TiltedCard
+              imageSrc={project.imgSrc}
+              altText={project.altText}
+              captionText={project.captionText}
+              containerWidth="20rem"
+              rotateAmplitude={12}
+              scaleOnHover={1.2}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={true}
+              overlayContent={
+                <div className="w-full h-full flex flex-col justify-between items-center p-4 rounded-lg">
+                  <div className="bg-black/70 backdrop-blur-xl border-1 border-gruv-dark-info w-[90%] rounded-full">
+                    <h1 className="text-gruv-dark-text text-2xl font-jetbrains-mono text-center">
+                      {project.name}
+                    </h1>
+                  </div>
+                  <div className="bg-black/30 backdrop-blur-xl border-2 border-gruv-dark-info w-full h-10 rounded-full flex justify-evenly items-center">
+                    <a
+                      href={project.githubLink}
+                      className="text-gruv-dark-accent hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
+                    >
+                      <Link />
+                    </a>
+                    <a
+                      href={project.liveLink}
+                      className="text-gruv-dark-accent hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
+                    >
+                      <ExternalLink />
+                    </a>
+                  </div>
+                </div>
+              }
+            />
+          </motion.div>
+        ))}
+      </motion.main>
       <TransitionDiv />
     </motion.div>
   );

@@ -1,5 +1,5 @@
 import { CircleUser, FolderKanban, Home, Mail } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router";
 import { setSelectedTab } from "../../../features/tabSlice/tabSlice";
