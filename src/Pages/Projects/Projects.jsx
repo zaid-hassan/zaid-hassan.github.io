@@ -6,6 +6,7 @@ import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import TiltedCard from "../../components/Bits/TiltedCard/TiltedCard";
 import { ExternalLink, Link, Link2 } from "lucide-react";
 import { li } from "motion/react-client";
+import Border from "../../components/Border/Border";
 
 const projects = [
   {
@@ -61,6 +62,7 @@ function Projects() {
       >
         Projects
       </motion.h1>
+      <Border />
       <motion.main className="min-h-screen w-full flex flex-wrap gap-11 justify-center items-center py-11">
         {projects.map((project, index) => (
           <motion.div initial={{opacity: 0, y: 50}} animate={{opacity:1, y: 0}} key={index} transition={{ ease: "easeInOut", delay: index * 0.4, duration: .5 }} className="">
