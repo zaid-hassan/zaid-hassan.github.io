@@ -10,7 +10,7 @@ import Border from "../../components/Border/Border";
 
 const projects = [
   {
-    imgSrc: "./src/assets/project/adhicrat.png",
+    imgSrc: "/project/adhicrat.png",
     altText: "Adhicrat AI",
     captionText: "Adhicrat AI",
     name: "Adhicrat AI",
@@ -18,7 +18,7 @@ const projects = [
     liveLink: "https://adhicrat-ai.vercel.app",
   },
   {
-    imgSrc: "./src/assets/project/easyrent.png",
+    imgSrc: "/project/easyrent.png",
     altText: "Easy Rent Punta Cana",
     captionText: "Easy Rent Punta Cana",
     name: "Easy Rent",
@@ -26,7 +26,7 @@ const projects = [
     liveLink: "https://easyrentpuntacana.com/",
   },
   {
-    imgSrc: "./src/assets/project/portfolio.png",
+    imgSrc: "/project/portfolio.png",
     altText: "Zaid Hassan Portfolio",
     captionText: "Zaid Hassan Portfolio",
     name: "Zaid Portfolio",
@@ -34,7 +34,7 @@ const projects = [
     liveLink: "https://zaidhassan.vercel.app",
   },
   {
-    imgSrc: "./src/assets/project/spacegunner.png",
+    imgSrc: "/project/spacegunner.png",
     altText: "Space Gunner",
     captionText: "Space Gunner",
     name: "Space Gunner",
