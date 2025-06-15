@@ -74,7 +74,7 @@ function Contacts() {
             whileHover="hover"
             initial="rest"
             animate="rest"
-            className="w-fit cursor-pointer group h-7"
+            className="w-fit group h-7"
           >
             <motion.a
               onMouseEnter={() => dispatch(setCursorType("link"))}
@@ -86,7 +86,7 @@ function Contacts() {
               href={link.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-thin md:text-md text-gruv-soft-text-muted group-hover:text-gruv-soft-muted"
+              className="text-sm cursor-none font-thin md:text-md text-gruv-soft-text-muted group-hover:text-gruv-soft-muted"
             >
               {link.name}
             </motion.a>

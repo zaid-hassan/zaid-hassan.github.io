@@ -86,13 +86,13 @@ function Projects() {
                   <div className="bg-black/30 backdrop-blur-xl border-2 border-gruv-dark-info w-full h-10 rounded-full flex justify-evenly items-center">
                     <a
                       href={project.githubLink}
-                      className="text-gruv-dark-accent hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
+                      className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
                     >
                       <Link />
                     </a>
                     <a
                       href={project.liveLink}
-                      className="text-gruv-dark-accent hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
+                      className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
                     >
                       <ExternalLink />
                     </a>
