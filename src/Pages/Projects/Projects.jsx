@@ -41,6 +41,14 @@ const projects = [
     githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
     liveLink: "https://space-gunner.netlify.app/",
   },
+  {
+    imgSrc: "/project/ziit.png",
+    altText: "Ziit",
+    captionText: "ZIIT",
+    name: "ZIIT",
+    githubLink: "https://github.com/Zuraverse/industrytrainingzura/",
+    liveLink: "https://ziit.netlify.app/",
+  },
 ];
 
 function Projects() {

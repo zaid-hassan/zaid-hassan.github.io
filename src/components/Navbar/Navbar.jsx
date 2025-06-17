@@ -67,25 +67,6 @@ function Navbar() {
         />
       </NavLink>
 
-      <NavLink
-        to="/contact"
-        className={({ isActive }) =>
-          `flex items-center space-x-2 transition-transform duration-300 ease-in-out cursor-none ${
-            isActive
-              ? "text-gruv-dark-accent scale-110"
-              : "text-gruv-dark-accent-alt"
-          } hover:text-gruv-dark-accent-hover`
-        }
-        onClick={() => {
-          dispatch(setSelectedTab("contact"));
-        }}
-      >
-        <Mail
-          onMouseEnter={() => dispatch(setCursorType("arrow"))}
-          onMouseLeave={() => dispatch(setCursorType("default"))}
-          className="w-6 h-6"
-        />
-      </NavLink>
 
       <NavLink
         to="/projects"
@@ -106,6 +87,28 @@ function Navbar() {
           className="w-6 h-6"
         />
       </NavLink>
+
+      <NavLink
+        to="/contact"
+        className={({ isActive }) =>
+          `flex items-center space-x-2 transition-transform duration-300 ease-in-out cursor-none ${
+            isActive
+              ? "text-gruv-dark-accent scale-110"
+              : "text-gruv-dark-accent-alt"
+          } hover:text-gruv-dark-accent-hover`
+        }
+        onClick={() => {
+          dispatch(setSelectedTab("contact"));
+        }}
+      >
+        <Mail
+          onMouseEnter={() => dispatch(setCursorType("arrow"))}
+          onMouseLeave={() => dispatch(setCursorType("default"))}
+          className="w-6 h-6"
+        />
+      </NavLink>
+
+      
     </nav>
   );
 }
