@@ -7,6 +7,7 @@ import TiltedCard from "../../components/Bits/TiltedCard/TiltedCard";
 import { ExternalLink, Link, Link2 } from "lucide-react";
 import { li } from "motion/react-client";
 import Border from "../../components/Border/Border";
+import { setCursorType } from "../../../features/cursorType/cursorType";
 
 const projects = [
   {
@@ -73,7 +74,17 @@ function Projects() {
       <Border />
       <motion.main className="min-h-screen w-full flex flex-wrap gap-11 justify-center items-center py-11">
         {projects.map((project, index) => (
-          <motion.div initial={{opacity: 0, y: 50}} animate={{opacity:1, y: 0}} key={index} transition={{ ease: "easeInOut", delay: index * 0.4, duration: .5 }} className="">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            key={index}
+            transition={{
+              ease: "easeInOut",
+              delay: index * 0.4,
+              duration: 0.5,
+            }}
+            className=""
+          >
             <TiltedCard
               imageSrc={project.imgSrc}
               altText={project.altText}
@@ -93,12 +104,16 @@ function Projects() {
                   </div>
                   <div className="bg-black/30 backdrop-blur-xl border-2 border-gruv-dark-info w-full h-10 rounded-full flex justify-evenly items-center">
                     <a
+                      onMouseEnter={() => dispatch(setCursorType("link"))}
+                      onMouseLeave={() => dispatch(setCursorType("default"))}
                       href={project.githubLink}
                       className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
                     >
                       <Link />
                     </a>
                     <a
+                      onMouseEnter={() => dispatch(setCursorType("link"))}
+                      onMouseLeave={() => dispatch(setCursorType("default"))}
                       href={project.liveLink}
                       className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
                     >
