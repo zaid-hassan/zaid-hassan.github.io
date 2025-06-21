@@ -11,12 +11,28 @@ import { setCursorType } from "../../../features/cursorType/cursorType";
 
 const projects = [
   {
+    imgSrc: "/project/ziit.png",
+    altText: "Ziit",
+    captionText: "ZIIT",
+    name: "ZIIT",
+    githubLink: "https://github.com/Zuraverse/industrytrainingzura/",
+    liveLink: "https://ziit.netlify.app/",
+  },
+  {
     imgSrc: "/project/adhicrat.png",
     altText: "Adhicrat AI",
     captionText: "Adhicrat AI",
     name: "Adhicrat AI",
     githubLink: "https://github.com/zaid-hassan/adhicrat_ai",
     liveLink: "https://adhicrat-ai.vercel.app",
+  },
+  {
+    imgSrc: "/project/rootsandroofs.png",
+    altText: "Roots and Roofs",
+    captionText: "Roots and Roofs",
+    name: "Roots and Roofs",
+    githubLink: "https://github.com/zaid-hassan/rootsnroofs",
+    liveLink: "https://rootsandroofs.netlify.app",
   },
   {
     imgSrc: "/project/easyrent.png",
@@ -42,14 +58,7 @@ const projects = [
     githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
     liveLink: "https://space-gunner.netlify.app/",
   },
-  {
-    imgSrc: "/project/ziit.png",
-    altText: "Ziit",
-    captionText: "ZIIT",
-    name: "ZIIT",
-    githubLink: "https://github.com/Zuraverse/industrytrainingzura/",
-    liveLink: "https://ziit.netlify.app/",
-  },
+  
 ];
 
 function Projects() {
@@ -107,6 +116,7 @@ function Projects() {
                       onMouseEnter={() => dispatch(setCursorType("link"))}
                       onMouseLeave={() => dispatch(setCursorType("default"))}
                       href={project.githubLink}
+                      target="_blank"
                       className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
                     >
                       <Link />
@@ -115,6 +125,7 @@ function Projects() {
                       onMouseEnter={() => dispatch(setCursorType("link"))}
                       onMouseLeave={() => dispatch(setCursorType("default"))}
                       href={project.liveLink}
+                      target="_blank"
                       className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
                     >
                       <ExternalLink />
