@@ -13,7 +13,7 @@ const projects = [
   {
     imgSrc: "/project/ziit.png",
     altText: "Ziit",
-    captionText: "ZIIT",
+    captionText: "ZIIT | Industrial Training Platform",
     name: "ZIIT",
     githubLink: "https://github.com/Zuraverse/industrytrainingzura/",
     liveLink: "https://ziit.netlify.app/",
@@ -21,7 +21,7 @@ const projects = [
   {
     imgSrc: "/project/adhicrat.png",
     altText: "Adhicrat AI",
-    captionText: "Adhicrat AI",
+    captionText: "Adhicrat AI | AI-Powered Web App",
     name: "Adhicrat AI",
     githubLink: "https://github.com/zaid-hassan/adhicrat_ai",
     liveLink: "https://adhicrat-ai.vercel.app",
@@ -29,7 +29,7 @@ const projects = [
   {
     imgSrc: "/project/rootsandroofs.png",
     altText: "Roots and Roofs",
-    captionText: "Roots and Roofs",
+    captionText: "Roots and Roofs | Real Estate Website",
     name: "Roots and Roofs",
     githubLink: "https://github.com/zaid-hassan/rootsnroofs",
     liveLink: "https://rootsandroofs.netlify.app",
@@ -37,7 +37,7 @@ const projects = [
   {
     imgSrc: "/project/easyrent.png",
     altText: "Easy Rent Punta Cana",
-    captionText: "Easy Rent Punta Cana",
+    captionText: "Easy Rent | Car Rental Website",
     name: "Easy Rent",
     githubLink: "https://github.com/zaid-hassan/bautistarents",
     liveLink: "https://easyrentpuntacana.com/",
@@ -45,7 +45,7 @@ const projects = [
   {
     imgSrc: "/project/portfolio.png",
     altText: "Zaid Hassan Portfolio",
-    captionText: "Zaid Hassan Portfolio",
+    captionText: "Portfolio | Personal Website",
     name: "Zaid Portfolio",
     githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
     liveLink: "https://zaidhassan.vercel.app",
@@ -53,13 +53,13 @@ const projects = [
   {
     imgSrc: "/project/spacegunner.png",
     altText: "Space Gunner",
-    captionText: "Space Gunner",
+    captionText: "Space Gunner | Retro Arcade Remake",
     name: "Space Gunner",
     githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
     liveLink: "https://space-gunner.netlify.app/",
   },
-  
 ];
+
 
 function Projects() {
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
