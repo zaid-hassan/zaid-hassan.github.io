@@ -24,6 +24,7 @@ function App() {
 
   return (
     <div className="cursor-none">
+      {/* <div className="h-screen w-screen bg-red-500 fixed top-0 left-0 -z-10"></div> */}
       <div
         style={{
           width: "100svw",

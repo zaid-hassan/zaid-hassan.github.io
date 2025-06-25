@@ -1,72 +1,165 @@
 @import "tailwindcss";
-@theme {
-  /* === Gruv Light === */
-  --color-gruv-light-background: #fbf1c7;
-  --color-gruv-light-surface: #fdf4c1;
-  --color-gruv-light-surface-alt: #f2e5bc;
-  --color-gruv-light-border: #d5c4a1;
-  --color-gruv-light-muted: #bdae93;
-  --color-gruv-light-text: #3c3836;
-  --color-gruv-light-text-muted: #665c54;
-  --color-gruv-light-subtext: #504945;
-  --color-gruv-light-heading: #98971a;
-  --color-gruv-light-accent: #cc241d;
-  --color-gruv-light-accent-hover: #9d0006;
-  --color-gruv-light-accent-alt: #458588;
-  --color-gruv-light-success: #689d6a;
-  --color-gruv-light-warning: #d79921;
-  --color-gruv-light-error: #cc241d;
-  --color-gruv-light-info: #83a598;
 
-  /* === Gruv Dark === */
-  --color-gruv-dark-background: #1d2021;
-  --color-gruv-dark-surface: #282828;
-  --color-gruv-dark-surface-alt: #32302f;
-  --color-gruv-dark-border: #3c3836;
-  --color-gruv-dark-muted: #504945;
-  --color-gruv-dark-text: #ebdbb2;
-  --color-gruv-dark-text-muted: #d5c4a1;
-  --color-gruv-dark-subtext: #bdae93;
-  --color-gruv-dark-heading: #fabd2f;
-  --color-gruv-dark-accent: #fe8019;
-  --color-gruv-dark-accent-hover: #d65d0e;
-  --color-gruv-dark-accent-alt: #83a598;
-  --color-gruv-dark-success: #b8bb26;
-  --color-gruv-dark-warning: #fabd2f;
-  --color-gruv-dark-error: #fb4934;
-  --color-gruv-dark-info: #83a598;
+:root {
+  /* === Unified Portfolio / Catppuccin Mocha === */
+  --cap-background: #1e1e2e;
+  --cap-surface: #2a2a3b;
+  --cap-surface-alt: #313244;
+  --cap-border: #45475a;
+  --cap-text: #cdd6f4;
+  --cap-text-muted: #a6adc8;
+  --cap-subtext: #9399b2;
+  --cap-heading: #89b4fa;
+  --cap-accent: #f38ba8;
+  --cap-accent-hover: #f5c2e7;
+  --cap-accent-alt: #94e2d5;
+  --cap-success: #a6e3a1;
+  --cap-warning: #f9e2af;
+  --cap-error: #f38ba8;
+  --cap-info: #89dceb;
 
-  /* === Gruv Soft === */
-  --color-gruv-soft-background: #282828;
-  --color-gruv-soft-surface: #32302f;
-  --color-gruv-soft-surface-alt: #3c3836;
-  --color-gruv-soft-border: #504945;
-  --color-gruv-soft-muted: #7c6f64;
-  --color-gruv-soft-text: #ebdbb2;
-  --color-gruv-soft-text-muted: #d5c4a1;
-  --color-gruv-soft-subtext: #bdae93;
-  --color-gruv-soft-heading: #d79921;
-  --color-gruv-soft-accent: #d65d0e;
-  --color-gruv-soft-accent-hover: #af3a03;
-  --color-gruv-soft-accent-alt: #689d6a;
-  --color-gruv-soft-success: #b8bb26;
-  --color-gruv-soft-warning: #fabd2f;
-  --color-gruv-soft-error: #fb4934;
-  --color-gruv-soft-info: #83a598;
+  /* === Web3 Enthusiast / Tokyo Night === */
+  --tn-background: #1a1b26;
+  --tn-surface: #24283b;
+  --tn-surface-alt: #292e42;
+  --tn-border: #414868;
+  --tn-text: #c0caf5;
+  --tn-text-muted: #a9b1d6;
+  --tn-subtext: #9aa5ce;
+  --tn-heading: #7aa2f7;
+  --tn-accent: #bb9af7;
+  --tn-accent-hover: #c0aaf5;
+  --tn-accent-alt: #7dcfff;
+  --tn-success: #9ece6a;
+  --tn-warning: #e0af68;
+  --tn-error: #f7768e;
+  --tn-info: #7aa2f7;
 
-  /* .jetbrains-mono-thin {
-    font-family: "JetBrains Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-  } */
+  /* === Cyberpunk Theme === */
+  --cy-background: #0f0c29;
+  --cy-surface: #302b63;
+  --cy-surface-alt: #42378f;
+  --cy-border: #ff00cc;
+  --cy-text: #f5f5f5;
+  --cy-text-muted: #d1d1d1;
+  --cy-subtext: #999999;
+  --cy-heading: #ff00cc;
+  --cy-accent: #00ffff;
+  --cy-accent-hover: #39ff14;
+  --cy-accent-alt: #ff00ff;
+  --cy-success: #39ff14;
+  --cy-warning: #ffcc00;
+  --cy-error: #ff0033;
+  --cy-info: #00ccff;
 
   --font-jetbrains-mono: "JetBrains Mono", monospace;
+  --font-100: 1030;
+  --font-200: 200;
+  --font-300: 300;
+  --font-400: 400;
+  --font-500: 500;
+  --font-600: 600;
+  --font-700: 700;
+  --font-800: 800;
+  --font-900: 900;
 }
 
-.custom-cursor-default {
-  cursor: url("./assets/circle.svg") 30 30, auto;
+.jb-100 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-100);
 }
-.custom-cursor-arrow {
-  cursor: url("./assets/circlearrow.svg") 50 50, auto;
+
+.jb-200 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-200);
+}
+
+.jb-300 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-300);
+}
+
+.jb-400 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-400);
+}
+
+.jb-500 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-500);
+}
+
+.jb-600 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-600);
+}
+
+.jb-700 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-700);
+}
+
+.jb-800 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-800);
+}
+
+.jb-900 {
+  font-family: var(--font-jetbrains-mono);
+  font-weight: var(--font-900);
+}
+
+
+.theme-web2 {
+  --color-background: var(--cap-background);
+  --color-surface: var(--cap-surface);
+  --color-surface-alt: var(--cap-surface-alt);
+  --color-border: var(--cap-border);
+  --color-text: var(--cap-text);
+  --color-text-muted: var(--cap-text-muted);
+  --color-subtext: var(--cap-subtext);
+  --color-heading: var(--cap-heading);
+  --color-accent: var(--cap-accent);
+  --color-accent-hover: var(--cap-accent-hover);
+  --color-accent-alt: var(--cap-accent-alt);
+  --color-success: var(--cap-success);
+  --color-warning: var(--cap-warning);
+  --color-error: var(--cap-error);
+  --color-info: var(--cap-info);
+}
+
+.theme-web3 {
+  --color-background: var(--tn-background);
+  --color-surface: var(--tn-surface);
+  --color-surface-alt: var(--tn-surface-alt);
+  --color-border: var(--tn-border);
+  --color-text: var(--tn-text);
+  --color-text-muted: var(--tn-text-muted);
+  --color-subtext: var(--tn-subtext);
+  --color-heading: var(--tn-heading);
+  --color-accent: var(--tn-accent);
+  --color-accent-hover: var(--tn-accent-hover);
+  --color-accent-alt: var(--tn-accent-alt);
+  --color-success: var(--tn-success);
+  --color-warning: var(--tn-warning);
+  --color-error: var(--tn-error);
+  --color-info: var(--tn-info);
+}
+
+.theme-cyberpunk {
+  --color-background: var(--cy-background);
+  --color-surface: var(--cy-surface);
+  --color-surface-alt: var(--cy-surface-alt);
+  --color-border: var(--cy-border);
+  --color-text: var(--cy-text);
+  --color-text-muted: var(--cy-text-muted);
+  --color-subtext: var(--cy-subtext);
+  --color-heading: var(--cy-heading);
+  --color-accent: var(--cy-accent);
+  --color-accent-hover: var(--cy-accent-hover);
+  --color-accent-alt: var(--cy-accent-alt);
+  --color-success: var(--cy-success);
+  --color-warning: var(--cy-warning);
+  --color-error: var(--cy-error);
+  --color-info: var(--cy-info);
 }

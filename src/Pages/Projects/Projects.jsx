@@ -1,11 +1,9 @@
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import TransitionDiv from "../../components/TransitionDiv/TransitionDiv";
 import { useDispatch, useSelector } from "react-redux";
 import CustomCursor from "../../components/CustomCursor/CustomCursor";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import TiltedCard from "../../components/Bits/TiltedCard/TiltedCard";
-import { ExternalLink, Link, Link2 } from "lucide-react";
-import { li } from "motion/react-client";
+import { ExternalLink, Link } from "lucide-react";
 import Border from "../../components/Border/Border";
 import { setCursorType } from "../../../features/cursorType/cursorType";
 
@@ -60,19 +58,20 @@ const projects = [
   },
 ];
 
-
 function Projects() {
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
   const isMobile = useSelector((state) => state.isMobile.isMobile);
   const dispatch = useDispatch();
+
   return (
     <motion.div
       key="project"
-      className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-gruv-soft-background"
+      className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-[var(--color-background)]"
     >
-      {!isMobile && <CustomCursor type={selectedCursor} />}{" "}
+      {!isMobile && <CustomCursor type={selectedCursor} />}
+
       <motion.h1
-        className="text-5xl md:text-7xl font-extrabold mb-6 text-gruv-soft-heading font-jetbrains-mono"
+        className="text-5xl md:text-7xl  mb-6 jb-900 text-[var(--color-heading)]"
         initial={{ y: "10vh", opacity: 0, scale: 0.8 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: "-10vh", opacity: 0, scale: 0.8 }}
@@ -80,7 +79,9 @@ function Projects() {
       >
         Projects
       </motion.h1>
+
       <Border />
+
       <motion.main className="min-h-screen w-full flex flex-wrap gap-11 justify-center items-center py-11">
         {projects.map((project, index) => (
           <motion.div
@@ -92,7 +93,6 @@ function Projects() {
               delay: index * 0.4,
               duration: 0.5,
             }}
-            className=""
           >
             <TiltedCard
               imageSrc={project.imgSrc}
@@ -106,18 +106,18 @@ function Projects() {
               displayOverlayContent={true}
               overlayContent={
                 <div className="w-full h-full flex flex-col justify-between items-center p-4 rounded-lg">
-                  <div className="bg-black/70 backdrop-blur-xl border-1 border-gruv-dark-info w-[90%] rounded-full">
-                    <h1 className="text-gruv-dark-text text-2xl font-jetbrains-mono text-center">
+                  <div className="bg-black/70 backdrop-blur-xl border border-[var(--color-info)] w-[90%] rounded-full">
+                    <h1 className="text-[var(--color-text)] text-2xl jb-100 text-center">
                       {project.name}
                     </h1>
                   </div>
-                  <div className="bg-black/30 backdrop-blur-xl border-2 border-gruv-dark-info w-full h-10 rounded-full flex justify-evenly items-center">
+                  <div className="bg-black/30 backdrop-blur-xl border-2 border-[var(--color-info)] w-full h-10 rounded-full flex justify-evenly items-center">
                     <a
                       onMouseEnter={() => dispatch(setCursorType("link"))}
                       onMouseLeave={() => dispatch(setCursorType("default"))}
                       href={project.githubLink}
                       target="_blank"
-                      className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
+                      className="text-[var(--color-accent)] cursor-none hover:text-[var(--color-accent-alt)] w-full h-full flex justify-center items-center"
                     >
                       <Link />
                     </a>
@@ -126,7 +126,7 @@ function Projects() {
                       onMouseLeave={() => dispatch(setCursorType("default"))}
                       href={project.liveLink}
                       target="_blank"
-                      className="text-gruv-dark-accent cursor-none hover:text-gruv-dark-accent-alt w-full h-full flex justify-center items-center"
+                      className="text-[var(--color-accent)] cursor-none hover:text-[var(--color-accent-alt)] w-full h-full flex justify-center items-center"
                     >
                       <ExternalLink />
                     </a>
@@ -137,6 +137,7 @@ function Projects() {
           </motion.div>
         ))}
       </motion.main>
+
       <TransitionDiv />
     </motion.div>
   );

@@ -18,7 +18,7 @@ function Home() {
     <motion.div
       ref={containerRef}
       onMouseEnter={() => dispatch(setCursorType("default"))}
-      className="flex flex-col bg-gruv-soft-background justify-center items-center space-y-4 h-screen cursor-none" // Hide native cursor
+      className="flex flex-col justify-center items-center space-y-4 h-screen cursor-none bg-[var(--color-background)]"
       key="home"
     >
       {!isMobile && <CustomCursor type={selectedCursor} />}
@@ -29,46 +29,47 @@ function Home() {
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: "-10vh", opacity: 0, scale: 0.8 }}
         transition={{ ease: "easeInOut" }}
+        className=""
       >
-        <span className="text-3xl md:text-4xl text-gruv-soft-text-muted font-jetbrains-mono font-thin text-center">
+        <span className="text-3xl md:text-4xl jb-100 text-center text-[var(--color-text-muted)]">
           Hello,
         </span>
         <br className="md:hidden" />
-        <span className="text-xl md:text-2xl text-gruv-soft-text-muted font-jetbrains-mono font-thin text-center">
+        <span className="text-xl md:text-2xl jb-100 text-center text-[var(--color-text-muted)]">
           I am{" "}
         </span>
-        <span className="text-4xl md:text-5xl text-heading text-center text-gruv-soft-heading font-jetbrains-mono font-extrabold">
+        <span className="text-4xl md:text-5xl jb-900  text-center text-[var(--color-heading)] drop-shadow-[0px_0px_7px_var(--color-heading)]">
           Zaid Hassan
         </span>
       </motion.div>
 
       <motion.h1
-        className="text-lg w-[80%] md:w-full md:text-xl text-gruv-soft-text text-center font-jetbrains-mono font-extralight"
+        className="text-lg w-[80%] md:w-full md:text-xl text-center jb-100 text-[var(--color-text)]"
         initial={{ y: "10vh", opacity: 0, scale: 0.8 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: "-10vh", opacity: 0, scale: 0.8 }}
         transition={{ ease: "easeInOut", delay: 0.4 }}
       >
         I'm{" "}
-        <Link to="/about" onClick={() => dispatch(setSelectedTab('about'))}>
+        <Link to="/about" onClick={() => dispatch(setSelectedTab("about"))}>
           <span
             onMouseEnter={() => dispatch(setCursorType("arrow"))}
             onMouseLeave={() => dispatch(setCursorType("default"))}
-            className="font-bold glitch-target hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l hover:from-gruv-light-success to-gruv-light-accent-alt transition duration-200 ease-in-out"
+            className="jb-900  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l from-[var(--color-success)] to-[var(--color-accent-alt)] transition duration-200 ease-in-out"
           >
             Front-End Developer
           </span>
         </Link>{" "}
         and a{" "}
-        <Link to="/about" onClick={() => dispatch(setSelectedTab('about'))}>
-        <span
-          onMouseEnter={() => dispatch(setCursorType("arrow"))}
-          onMouseLeave={() => dispatch(setCursorType("default"))}
-          className="font-bold glitch-target hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l hover:from-gruv-light-success to-gruv-light-accent-alt transition duration-200 ease-in-out"
-        >
-          Game Developer
-        </span>
-          </Link>
+        <Link to="/about" onClick={() => dispatch(setSelectedTab("about"))}>
+          <span
+            onMouseEnter={() => dispatch(setCursorType("arrow"))}
+            onMouseLeave={() => dispatch(setCursorType("default"))}
+            className="jb-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l from-[var(--color-success)] to-[var(--color-accent-alt)] transition duration-200 ease-in-out"
+          >
+            Game Developer
+          </span>
+        </Link>
       </motion.h1>
 
       <TransitionDiv />

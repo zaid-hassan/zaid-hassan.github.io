@@ -11,6 +11,7 @@ function Navbar() {
   const { scrollY } = useScroll();
   const [scrollDirection, setScrollDirection] = useState("down");
   const location = useLocation();
+
   useMotionValueEvent(scrollY, "change", (current) => {
     const diff = current - scrollY.getPrevious();
     setScrollDirection(diff > 0 ? "down" : "up");
@@ -22,93 +23,39 @@ function Navbar() {
       setScrollDirection("up");
     }
   }, [location.pathname]);
+
   const dispatch = useDispatch();
+
   return (
     <nav
-      className={`flex h-11 w-[90%] md:w-[40%] rounded-xl justify-evenly items-center gap-x-4 mx-auto bg-white/10 backdrop-blur-md transition-all duration-700 ease-in-out cursor-none`}
+      className={`flex h-11 w-[90%] md:w-[40%] rounded-xl justify-evenly items-center gap-x-4 mx-auto border-[var(--color-border)] border-1 bg-white/10 backdrop-blur-md transition-all duration-700 ease-in-out cursor-none`}
     >
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          `flex items-center space-x-2 transition-transform duration-300 ease-in-out cursor-none ${
-            isActive
-              ? "text-gruv-dark-accent scale-110"
-              : "text-gruv-dark-accent-alt"
-          } hover:text-gruv-dark-accent-hover `
-        }
-        onClick={() => {
-          dispatch(setSelectedTab("home"));
-        }}
-      >
-        <Home
-          onMouseEnter={() => dispatch(setCursorType("arrow"))}
-          onMouseLeave={() => dispatch(setCursorType("default"))}
-          className="w-6 h-6"
-        />
-      </NavLink>
-
-      <NavLink
-        to="/about"
-        className={({ isActive }) =>
-          `flex items-center space-x-2 transition-transform duration-300 ease-in-out cursor-none ${
-            isActive
-              ? "text-gruv-dark-accent scale-110"
-              : "text-gruv-dark-accent-alt"
-          } hover:text-gruv-dark-accent-hover`
-        }
-        onClick={() => {
-          dispatch(setSelectedTab("about"));
-        }}
-      >
-        <CircleUser
-          onMouseEnter={() => dispatch(setCursorType("arrow"))}
-          onMouseLeave={() => dispatch(setCursorType("default"))}
-          className="w-6 h-6"
-        />
-      </NavLink>
-
-
-      <NavLink
-        to="/projects"
-        className={({ isActive }) =>
-          `flex items-center space-x-2 transition-transform duration-300 ease-in-out cursor-none ${
-            isActive
-              ? "text-gruv-dark-accent scale-110"
-              : "text-gruv-dark-accent-alt"
-          } hover:text-gruv-dark-accent-hover`
-        }
-        onClick={() => {
-          dispatch(setSelectedTab("projects"));
-        }}
-      >
-        <FolderKanban
-          onMouseEnter={() => dispatch(setCursorType("arrow"))}
-          onMouseLeave={() => dispatch(setCursorType("default"))}
-          className="w-6 h-6"
-        />
-      </NavLink>
-
-      <NavLink
-        to="/contact"
-        className={({ isActive }) =>
-          `flex items-center space-x-2 transition-transform duration-300 ease-in-out cursor-none ${
-            isActive
-              ? "text-gruv-dark-accent scale-110"
-              : "text-gruv-dark-accent-alt"
-          } hover:text-gruv-dark-accent-hover`
-        }
-        onClick={() => {
-          dispatch(setSelectedTab("contact"));
-        }}
-      >
-        <Mail
-          onMouseEnter={() => dispatch(setCursorType("arrow"))}
-          onMouseLeave={() => dispatch(setCursorType("default"))}
-          className="w-6 h-6"
-        />
-      </NavLink>
-
-      
+      {/* Nav Items */}
+      {[
+        { to: "/", icon: Home, label: "home" },
+        { to: "/about", icon: CircleUser, label: "about" },
+        { to: "/projects", icon: FolderKanban, label: "projects" },
+        { to: "/contact", icon: Mail, label: "contact" },
+      ].map(({ to, icon: Icon, label }) => (
+        <NavLink
+          key={label}
+          to={to}
+          className={({ isActive }) =>
+            `flex items-center space-x-2 transition-transform duration-300 ease-in-out cursor-none ${
+              isActive
+                ? "text-[var(--color-accent)] scale-110"
+                : "text-[var(--color-accent-alt)]"
+            } hover:text-[var(--color-accent-hover)]`
+          }
+          onClick={() => dispatch(setSelectedTab(label))}
+        >
+          <Icon
+            onMouseEnter={() => dispatch(setCursorType("arrow"))}
+            onMouseLeave={() => dispatch(setCursorType("default"))}
+            className="w-6 h-6"
+          />
+        </NavLink>
+      ))}
     </nav>
   );
 }
