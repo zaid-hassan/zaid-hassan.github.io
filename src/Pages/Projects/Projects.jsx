@@ -66,7 +66,7 @@ function Projects() {
   return (
     <motion.div
       key="project"
-      className="flex flex-col justify-start items-start px-6 py-12 min-h-screen bg-[var(--color-background)]"
+      className="flex flex-col justify-start items-start px-6 py-12 min-h-screen"
     >
       {!isMobile && <CustomCursor type={selectedCursor} />}
 

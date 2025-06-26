@@ -18,7 +18,7 @@ function Home() {
     <motion.div
       ref={containerRef}
       onMouseEnter={() => dispatch(setCursorType("default"))}
-      className="flex flex-col justify-center items-center space-y-4 h-screen cursor-none bg-[var(--color-background)]"
+      className="flex flex-col justify-center items-center space-y-4 h-screen cursor-none"
       key="home"
     >
       {!isMobile && <CustomCursor type={selectedCursor} />}

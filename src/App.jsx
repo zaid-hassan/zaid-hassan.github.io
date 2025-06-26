@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Footer from "./components/Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsMobile } from "../features/isMobile/isMobileSlice";
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 import Navbar from "./components/Navbar/Navbar";
 import Noise from "./components/Bits/Noise/Noise";
+import ThreeDCanvas from "./components/ThreeDCanvas/ThreeDCanvas"
 
 function App() {
   const dispatch = useDispatch();
@@ -23,8 +24,10 @@ function App() {
   }, []);
 
   return (
-    <div className="cursor-none">
-      {/* <div className="h-screen w-screen bg-red-500 fixed top-0 left-0 -z-10"></div> */}
+    <div className="cursor-none relative">
+      <div className="h-screen w-screen fixed top-0 left-0 -z-10 bg-[var(--color-background)]">
+        <ThreeDCanvas />
+      </div>
       <div
         style={{
           width: "100svw",

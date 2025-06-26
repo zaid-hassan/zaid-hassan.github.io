@@ -63,7 +63,7 @@ const Noise = ({
     };
   }, [patternSize, patternScaleX, patternScaleY, patternRefreshInterval, patternAlpha]);
 
-  return <canvas className="absolute inset-0 w-full h-full" ref={grainRef} />;
+  return <canvas className="absolute inset-0 w-full h-full pointer-events-none" ref={grainRef} />;
 };
 
 export default Noise;
