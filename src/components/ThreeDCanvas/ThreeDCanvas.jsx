@@ -177,7 +177,7 @@ function ThreeDCanvas() {
 
           {/* Terminal / Code Block */}
           <group position={terminalPosition}>
-            <Float speed={5.5} rotationIntensity={0} floatIntensity={1.5}>
+            <Float speed={5} rotationIntensity={.8} floatIntensity={.2}>
               <CodeBlock />
             </Float>
           </group>
