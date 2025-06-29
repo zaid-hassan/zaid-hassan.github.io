@@ -50,24 +50,35 @@ function Home() {
         exit={{ y: "-10vh", opacity: 0, scale: 0.8 }}
         transition={{ ease: "easeInOut", delay: 0.4 }}
       >
-        I'm{" "}
-        <Link to="/about" onClick={() => dispatch(setSelectedTab("about"))}>
-          <span
-            onMouseEnter={() => dispatch(setCursorType("arrow"))}
-            onMouseLeave={() => dispatch(setCursorType("default"))}
-            className="jb-900  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l from-[var(--color-success)] to-[var(--color-accent-alt)] transition duration-200 ease-in-out"
-          >
-            Front-End Developer
-          </span>
-        </Link>{" "}
-        and a{" "}
+        I build the front-end of the future as a{" "}
+        <br />
         <Link to="/about" onClick={() => dispatch(setSelectedTab("about"))}>
           <span
             onMouseEnter={() => dispatch(setCursorType("arrow"))}
             onMouseLeave={() => dispatch(setCursorType("default"))}
             className="jb-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l from-[var(--color-success)] to-[var(--color-accent-alt)] transition duration-200 ease-in-out"
           >
-            Game Developer
+            Web3 Dev
+          </span>
+        </Link>
+        ,{" "}
+        <Link to="/about" onClick={() => dispatch(setSelectedTab("about"))}>
+          <span
+            onMouseEnter={() => dispatch(setCursorType("arrow"))}
+            onMouseLeave={() => dispatch(setCursorType("default"))}
+            className="jb-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l from-[var(--color-success)] to-[var(--color-accent-alt)] transition duration-200 ease-in-out"
+          >
+            Front-End Engineer
+          </span>
+        </Link>{" "}
+        &{" "}
+        <Link to="/about" onClick={() => dispatch(setSelectedTab("about"))}>
+          <span
+            onMouseEnter={() => dispatch(setCursorType("arrow"))}
+            onMouseLeave={() => dispatch(setCursorType("default"))}
+            className="jb-900 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l from-[var(--color-success)] to-[var(--color-accent-alt)] transition duration-200 ease-in-out"
+          >
+            Game Creator
           </span>
         </Link>
       </motion.h1>
