@@ -13,6 +13,8 @@ const projects = [
     altText: "Ziit",
     captionText: "ZIIT | Industrial Training Platform",
     name: "ZIIT",
+    description: "A Landing page for Zura Integrated Industrial Training",
+    tech: ["React", "Framer Motion", "Tailwind CSS",],
     githubLink: "https://github.com/Zuraverse/industrytrainingzura/",
     liveLink: "https://ziit.netlify.app/",
   },
@@ -21,22 +23,28 @@ const projects = [
     altText: "Adhicrat AI",
     captionText: "Adhicrat AI | AI-Powered Web App",
     name: "Adhicrat AI",
+    description: "An AI-powered web app built to assist bureaucrats.",
+    tech: ["React", "Gemini API", "Material UI"],
     githubLink: "https://github.com/zaid-hassan/adhicrat_ai",
     liveLink: "https://adhicrat-ai.vercel.app",
   },
-  {
-    imgSrc: "/project/rootsandroofs.png",
-    altText: "Roots and Roofs",
-    captionText: "Roots and Roofs | Real Estate Website",
-    name: "Roots and Roofs",
-    githubLink: "https://github.com/zaid-hassan/rootsnroofs",
-    liveLink: "https://rootsandroofs.netlify.app",
-  },
+  // {
+  //   imgSrc: "/project/rootsandroofs.png",
+  //   altText: "Roots and Roofs",
+  //   captionText: "Roots and Roofs | Real Estate Website",
+  //   name: "Roots and Roofs",
+  //   description: "A website for a real estate company, to bring them online.",
+  //   tech: ["React", "Tailwind CSS", "React Router"],
+  //   githubLink: "https://github.com/zaid-hassan/rootsnroofs",
+  //   liveLink: "https://rootsandroofs.netlify.app",
+  // },
   {
     imgSrc: "/project/easyrent.png",
     altText: "Easy Rent Punta Cana",
     captionText: "Easy Rent | Car Rental Website",
     name: "Easy Rent",
+    description: "A car rental website for Easy Rent Punta Cana.",
+    tech: ["HTML", "CSS", "JavaScript"],
     githubLink: "https://github.com/zaid-hassan/bautistarents",
     liveLink: "https://easyrentpuntacana.com/",
   },
@@ -45,6 +53,8 @@ const projects = [
     altText: "Zaid Hassan Portfolio",
     captionText: "Portfolio | Personal Website",
     name: "Zaid Portfolio",
+    description: "My personal portfolio showcasing my projects and skills.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Three.js"],
     githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
     liveLink: "https://zaidhassan.vercel.app",
   },
@@ -53,10 +63,13 @@ const projects = [
     altText: "Space Gunner",
     captionText: "Space Gunner | Retro Arcade Remake",
     name: "Space Gunner",
+    description: "A fast-paced space shooter arcade game built from scratch.",
+    tech: ["HTML5 Canvas", "JavaScript", "CSS", "Firebase"],
     githubLink: "https://github.com/zaid-hassan/zaid-hassan.github.io",
     liveLink: "https://space-gunner.netlify.app/",
   },
 ];
+
 
 function Projects() {
   const selectedCursor = useSelector((state) => state.cursorType.currentType);
@@ -99,40 +112,17 @@ function Projects() {
               altText={project.altText}
               captionText={project.captionText}
               containerWidth="20rem"
-              rotateAmplitude={12}
+              rotateAmplitude={15}
               scaleOnHover={1.2}
               showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}
-              overlayContent={
-                <div className="w-full h-full flex flex-col justify-between items-center p-4 rounded-lg">
-                  <div className="bg-black/70 backdrop-blur-xl border border-[var(--color-info)] w-[90%] rounded-full">
-                    <h1 className="text-[var(--color-text)] text-2xl jb-100 text-center">
-                      {project.name}
-                    </h1>
-                  </div>
-                  <div className="bg-black/30 backdrop-blur-xl border-2 border-[var(--color-info)] w-full h-10 rounded-full flex justify-evenly items-center">
-                    <a
-                      onMouseEnter={() => dispatch(setCursorType("link"))}
-                      onMouseLeave={() => dispatch(setCursorType("default"))}
-                      href={project.githubLink}
-                      target="_blank"
-                      className="text-[var(--color-accent)] cursor-none hover:text-[var(--color-accent-alt)] w-full h-full flex justify-center items-center"
-                    >
-                      <Link />
-                    </a>
-                    <a
-                      onMouseEnter={() => dispatch(setCursorType("link"))}
-                      onMouseLeave={() => dispatch(setCursorType("default"))}
-                      href={project.liveLink}
-                      target="_blank"
-                      className="text-[var(--color-accent)] cursor-none hover:text-[var(--color-accent-alt)] w-full h-full flex justify-center items-center"
-                    >
-                      <ExternalLink />
-                    </a>
-                  </div>
-                </div>
-              }
+              projectName={project.name}
+              projectLive={project.liveLink}
+              projectGitHub={project.githubLink}
+              description={project.description}
+              tech={project.tech}
+              
             />
           </motion.div>
         ))}
