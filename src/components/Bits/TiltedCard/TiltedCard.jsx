@@ -120,7 +120,7 @@ export default function TiltedCard({
       )}
 
       <motion.div
-        className={`relative w-full ${aspectRatio} bg-[var(--color-surface-alt)]/50 backdrop-blur-md rounded-xl border-1 border-[var(--color-accent)] hover:border-[var(--color-accent-alt)] [transform-style:preserve-3d]`}
+        className={`relative w-full ${aspectRatio} bg-[var(--color-surface-alt)]/95  rounded-xl border-1 border-[var(--color-accent)] hover:border-[var(--color-accent-alt)] [transform-style:preserve-3d]`}
         style={{
           rotateX,
           rotateY,
