@@ -109,7 +109,6 @@
   font-weight: var(--font-900);
 }
 
-
 .theme-web2 {
   --color-background: var(--cap-background);
   --color-surface: var(--cap-surface);
@@ -162,4 +161,17 @@
   --color-warning: var(--cy-warning);
   --color-error: var(--cy-error);
   --color-info: var(--cy-info);
+}
+
+.animate-pulsate {
+  animation: pulsate 1s ease-in-out infinite;
+}
+@keyframes pulsate {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
 }
